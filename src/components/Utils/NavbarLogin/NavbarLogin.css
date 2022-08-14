@@ -1,0 +1,15 @@
+.bg-dark {
+    background-color: #3D464D !important;
+}
+.nav-link {
+    color: #F5F5F5 ;
+    transition: all 0.5s;
+}
+.nav-link:hover {
+    color: #FFD333 !important;
+}
+
+.dropdown-toggle::after {
+    content: '';
+    display: none;
+}
