@@ -36,6 +36,7 @@ import UserManageOrders from './User/UserManageOrders';
 import UserAllOrders from './User/UserAllOrders';
 import Loader from './Utils/DottedLoader/Loader';
 import AdminEditProduct from './Admin/AdminEditProduct';
+import UserProfile from './User/UserProfile';
 
 
-export { Header, NavbarLogin, Slider, Featured, SubTitle, HomeCategories, CategoryCard, CategoryContainer,  ProductCardContainer, DiscountSection, FeaturedVendors, Footer, Pagination, CategoryHeader, SearchCountResult, SideFilterContainer, ProductDetails, ReviewsContainer, ProductsYouLike, CartContainer, ChoosePayment, AdminNavbar, AdminAddsubCategory, AdminAddProduct, AdminEditProduct, AdminAddCategory, AdminAddVendor, AdminManageOrders, AdminManageProducts, AdminProductCard, AdminAllOrdersItem, AdminOrderDetails, AdminClientDetails, Usernavbar, UserManageOrders, UserAllOrders, Loader }
+export { Header, NavbarLogin, Slider, Featured, SubTitle, HomeCategories, CategoryCard, CategoryContainer,  ProductCardContainer, DiscountSection, FeaturedVendors, Footer, Pagination, CategoryHeader, SearchCountResult, SideFilterContainer, ProductDetails, ReviewsContainer, ProductsYouLike, CartContainer, ChoosePayment, AdminNavbar, AdminAddsubCategory, AdminAddProduct, AdminEditProduct, AdminAddCategory, AdminAddVendor, AdminManageOrders, AdminManageProducts, AdminProductCard, AdminAllOrdersItem, AdminOrderDetails, AdminClientDetails, Usernavbar, UserManageOrders, UserAllOrders, Loader, UserProfile }

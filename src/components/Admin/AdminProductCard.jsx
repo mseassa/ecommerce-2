@@ -20,9 +20,10 @@ const AdminProductCard = ({ item }) => {
   const handleShow = () => setShow(true);
 
   const dispatch = useDispatch()
-  const handleDelete = () => {
 
-    dispatch(deleteProduct(item._id))
+  const handleDelete = async () => {
+
+    await dispatch(deleteProduct(item._id))
     setShow(false);
     window.location.reload()
   };

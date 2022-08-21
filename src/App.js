@@ -2,6 +2,10 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, RegisterPage, AllcategoryPage, AllVendorsPages, ShopProductsPage, ProductDetailsPage, CartPage, ChoosePaymentMethodPage, NotFound, AdminPage, AdminManageProductsPage, AdminManageOrdersPage, AdminAddVendorPage, AdminAddSubCategoryPage, AdminAddProductPage, AdminAddCategoryPage, AdminOrderDetailsPage, UserPage, UserManageOrdersPage, UserFavoriteProductsPage, UserAllAddressPage } from "./pages";
 import { Header, NavbarLogin, Footer, AdminEditProduct } from './components'
+import ForgetPasswordPage from "./pages/Auth/ForgetPasswordPage";
+import VerifyResetCodePage from "./pages/Auth/VerifyResetCodePage";
+import ResetPasswordPage from "./pages/Auth/ResetPasswordPage";
+import UserProfilePage from "./pages/User/UserProfilePage";
 
 function App() {
   return (
@@ -34,7 +38,11 @@ function App() {
         <Route path='allorders' element={<UserManageOrdersPage title='Manage All Orders'/>} />
         <Route path='favoriteproducts' element={<UserFavoriteProductsPage title='Manage All Orders'/>} />
         <Route path='addresses' element={<UserAllAddressPage title='Manage All Orders'/>} />
+        <Route path='profile' element={<UserProfilePage title='User Profile'/>} />
         </Route>
+        <Route path='/forgetpassword' element={<ForgetPasswordPage />} />
+        <Route path='/verifyresetcode' element={<VerifyResetCodePage />} />
+        <Route path='/resetpaswword' element={<ResetPasswordPage />} />
         <Route path='*' element={<NotFound />} />
         
       </Routes>

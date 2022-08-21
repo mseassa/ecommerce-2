@@ -9,7 +9,6 @@ const AdminAddProductImageInput = () => {
 
   const onChange = (imageList, addUpdateIndex) => {
     // data for submit
-    console.log(imageList, addUpdateIndex);
     setImgs(imageList);
   };
   return (

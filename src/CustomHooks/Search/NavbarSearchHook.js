@@ -16,9 +16,9 @@ const NavbarSearchHook = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            if (window.location.pathname !== '/products') {
-                navigate('/products')
-            }
+            // if (window.location.pathname !== '/products') {
+            //     // navigate('/products')
+            // }
             getProduct(searchWord)
         }, 1000);
     }, [searchWord])

@@ -3,6 +3,7 @@ import { CategoryContainer, Pagination } from "../../components";
 import AllCategoryPageHook from "../../CustomHooks/Category/AllCategoryPageHook";
 
 const AllcategoryPage = () => {
+
   const [category, loading, pageCount, getPage] = AllCategoryPageHook();
 
   return (

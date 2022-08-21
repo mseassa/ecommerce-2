@@ -1,5 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import images from "../../constants/images";
 
 const CategoryCard = ({ title, img }) => {
@@ -10,7 +11,7 @@ const CategoryCard = ({ title, img }) => {
         lg='4'
         sm='6'
         className="pb-1">
-            <a className="text-decoration-none text-dark" href="">
+            <Link className="text-decoration-none text-dark" to="">
             <div className="cat-item d-flex align-items-center mb-4">
                 <div
                 className="overflow-hidden"
@@ -23,7 +24,7 @@ const CategoryCard = ({ title, img }) => {
                 <small className="text-body">100 Products</small>
                 </div>
             </div>
-            </a>
+            </Link>
         </Col>
         </>
     );

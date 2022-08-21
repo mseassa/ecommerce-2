@@ -44,7 +44,6 @@ const AdminEditProduct = () => {
     selectedSubID
     
   ] = EditProductHook(id);
-  console.log(imgs);
   return (
     <>
       <Row className="justify-content-center ">

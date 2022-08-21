@@ -1,5 +1,5 @@
 import { GET_ALL_VENDORS, GET_ERROR, CREATE_VENDOR } from './../type';
-import useGetData from './../../hooks/useGetData';
+import { useGetData } from './../../hooks/useGetData';
 import { useInsertDataWithImage } from '../../hooks/useInsertData';
 
 // to get All Vendors

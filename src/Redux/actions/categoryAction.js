@@ -1,5 +1,5 @@
-import { GET_ALL_CATEGORY, GET_ERROR, CREATE_CATEGORY, GET_ONE_CATEGORY } from './../type';
-import useGetData from './../../hooks/useGetData';
+import { GET_ALL_CATEGORY, GET_ERROR, CREATE_CATEGORY, GET_ONE_CATEGORY, GET_SOME_CATEGORY } from './../type';
+import { useGetData } from './../../hooks/useGetData';
 import { useInsertDataWithImage } from '../../hooks/useInsertData';
 
 // to get All Category
@@ -10,6 +10,24 @@ export const getAllCategory = (limit)=> async (dispatch) => {
         const response = await useGetData(`/api/v1/categories?limit=${limit}`)
         dispatch({
             type: GET_ALL_CATEGORY,
+            payload: response,
+        })
+
+    } catch (error) {
+        dispatch({
+            type: GET_ERROR,
+            payload: `error ${error}`,
+        })
+    }
+}
+// to get Some Category
+export const getSomeCategory = (limit)=> async (dispatch) => {
+
+    try {
+
+        const response = await useGetData(`/api/v1/categories?limit=${limit}`)
+        dispatch({
+            type: GET_SOME_CATEGORY,
             payload: response,
         })
 

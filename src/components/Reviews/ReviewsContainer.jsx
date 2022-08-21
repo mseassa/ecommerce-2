@@ -15,7 +15,6 @@ const ReviewsContainer = () => {
     const [item] = ViewProductDetailsHook(id)
 
     const ratingChanged = (newRating) => {
-        console.log(newRating);
     };
     return (
         <>

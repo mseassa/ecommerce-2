@@ -20,7 +20,7 @@ const HomeCategories = () => {
 
             <div className="row px-xl-5 pb-3 position-relative">
             {loading === false ? (
-                category.length > 0 ? (
+                category ? (
                 category
                     .map((categoryItem) => (
                     <CategoryCard

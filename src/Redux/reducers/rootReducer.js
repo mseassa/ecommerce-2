@@ -1,5 +1,6 @@
 
 import { combineReducers } from 'redux';
+import AuthReducer from './authReducer';
 import categoryReducer from "./categoryReducer";
 import productsReducer from './productsReducer';
 import subcategoryReducer from './subcategoryReducer';
@@ -11,5 +12,6 @@ export default combineReducers({
     allVendors: VendorReducer,
     subcategory: subcategoryReducer,
     products: productsReducer,
+    AuthReducer: AuthReducer,
 });
 

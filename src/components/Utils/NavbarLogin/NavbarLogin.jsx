@@ -6,27 +6,13 @@ import {
   faHeart,
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './NavbarLogin.css';
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getAllCategory } from "../../../Redux/actions/categoryAction";
+import NavbarCategoryHook from "../../../CustomHooks/Category/NavbarCateoryHook";
 
 const NavbarLogin = () => {
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-      dispatch(getAllCategory());
-  }, []);
-  
-  // get last category state from redux
-  const category = useSelector((state) => state.allCategory.category.data);
-
-  let navCategory = []
-  if (category) {
-    navCategory = category.slice(0,4)
-  }
+  const [category, loading] = NavbarCategoryHook();
 
   return (
     <>
@@ -53,19 +39,33 @@ const NavbarLogin = () => {
               className="dropdown-menu rounded-0 top-0 py-0"
               aria-labelledby="dropdownMenuButton1"
             >
-                  {
-                category ? (category.map((item)=> <li key={item._id} className='border-bottom py-2'>
-                <Link className="dropdown-item" to="#">
+              {loading === false ? (
+                category ? (
+                <>{category
+                    .map((item) => (
+                      <li key={item._id} className='border-bottom py-2'>
+                <Link className="dropdown-item" to="/">
                   {item.name}
                 </Link>
-              </li>)) : ('')
-              }
+              </li>
+                    ))}
+                    <li className='border-bottom py-2'>
+                <Link className="dropdown-item" to="/allcategories">
+                  More
+                </Link></li>
+                    </>
+                ) : (
+                ""
+                )
+            ) : ('')}
+                
+                
             </ul>
           </div>
           <div className="col-lg-9">
             <nav className="navbar navbar-expand-lg navbar-dark py-3 py-lg-0 px-0">
               <div className="container-fluid">
-                <Link className="navbar-brand d-block d-lg-none" to="#">
+                <Link className="navbar-brand d-block d-lg-none" to="/">
                   <span className="h1 text-uppercase text-dark bg-light px-2">
                     Hamza
                   </span>
@@ -86,30 +86,23 @@ const NavbarLogin = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div className="navbar-nav">
-
-                  {
-                navCategory ? (navCategory.map((item)=> <li key={item._id} className=''>
-                <Link  className="nav-link" aria-current="page" to="#">
+                  {loading === false ? (
+                category ? (
+                <>{category
+                    .map((item) => (
+                      <Link key={item._id} className="nav-link" aria-current="page" to="/">
                   {item.name}
                 </Link>
-              </li>)) : ('')
-              }
-{/* 
-                    <Link  className="nav-link" aria-current="page" to="">
-                    Dresses
+                    ))}
+                    <Link className="nav-link" aria-current="page" to="/allcategories">
+                      More
                     </Link>
-                    <Link className="nav-link" to="/">
-                    Shirts
-                    </Link>
-                    <Link className="nav-link" to="/">
-                    Jeans
-                    </Link>
-                    <Link className="nav-link" to="/">
-                    Blazers
-                    </Link>
-                    <Link className="nav-link" to="/">
-                    Shoes
-                    </Link> */}
+                    </>
+                    ) : (
+                      ""
+                      )
+                      ) : ('')}
+                  
                   </div>
                   <div className="navbar-nav ms-auto d-none d-lg-block">
                   <Link to="" className="btn px-0">
