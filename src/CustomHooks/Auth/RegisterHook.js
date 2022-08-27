@@ -29,7 +29,7 @@ const getFormValue = (e) => {
 
 const validateForm = () => {
     const schema = Joi.object({
-    name: Joi.string().alphanum().required().min(3).max(10),
+    name: Joi.string().alphanum().required().min(6).max(30),
     email: Joi.string()
         .required()
         .email({ tlds: { allow: ["com", "net"] } }),

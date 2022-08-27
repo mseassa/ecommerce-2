@@ -8,6 +8,8 @@ import NavbarSearchHook from "../../../CustomHooks/Search/NavbarSearchHook";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useDispatch, useSelector } from "react-redux";
+import { getLoggedUserWishList } from './../../../Redux/actions/wishListAction';
 
 
 const Header = () => {
@@ -31,9 +33,34 @@ const Header = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setUser({});
-    navigate('/')
-    // window.location.href = '/'
+    // navigate('/')
+    window.location.href = '/'
   };
+
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //     const get = async () => {
+  //     await dispatch(getLoggedUserWishList());
+  //     };
+  //     get();
+  // }, []);
+
+  // const response = useSelector(
+  //     (state) => state.WishListReducer.loggedUserWidshList.data
+  // );
+
+  // const [favProductsCount, setFavProductsCount] = useState(0)
+
+  // useEffect(() => {
+  //   console.log('out');
+  //   if (response) {
+  //     console.log('in');
+  //   setFavProductsCount(response.length)
+  //   }
+  // }, [response])
+  
+  
 
   return (
     <>
@@ -100,6 +127,7 @@ const Header = () => {
             <Link to="" className="btn px-0">
               <FontAwesomeIcon icon={faHeart} className="me-2 text-primary" />
               <span className="badge text-dark border border-dark rounded-circle">
+                {/* {favProductsCount >= 1 ? (favProductsCount) : ('0')} */}
                 0
               </span>
             </Link>

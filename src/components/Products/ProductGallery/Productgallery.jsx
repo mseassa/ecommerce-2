@@ -11,17 +11,19 @@ const Productgallery = () => {
 
   return (
     <>
-    <Carousel variant="dark" indicators={false} className=''>
-      {
-        item.images ? (item.images.map((image, index)=> <Carousel.Item key={index}>
-        <img
-          className="d-block w-100"
-          src={image}
-          alt={`${item.title} ${index+1}`}
-        />
-      </Carousel.Item>)) : ('')
-      }
-</Carousel>
+<div>
+      <Carousel variant="dark" indicators={false} className=''>
+        {
+          item.images ? (item.images.map((image, index)=> <Carousel.Item key={index}>
+          <img
+            className="d-block w-100"
+            src={image}
+            alt={`${item.title} ${index+1}`}
+          />
+        </Carousel.Item>)) : ('')
+        }
+  </Carousel>
+</div>
     </>
   )
 }

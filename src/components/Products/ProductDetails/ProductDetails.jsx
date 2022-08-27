@@ -7,7 +7,7 @@ import Productgallery from './../ProductGallery/Productgallery';
 const ProductDetails = () => {
   return (
     <>
-    <Row className='py-3'>
+    <Row className='g-0'>
         <Col lg='5'>
             <Productgallery />
         </Col>

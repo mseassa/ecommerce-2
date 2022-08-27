@@ -4,6 +4,7 @@ import { getOneProduct, getProductsLike } from '../../Redux/actions/productsActi
 
 const ViewProductDetailsHook = (id) => {
     const dispatch = useDispatch()
+    
     useEffect(() => {
         dispatch(getOneProduct(id))
     }, [])

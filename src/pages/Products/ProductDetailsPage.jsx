@@ -16,7 +16,7 @@ const ProductDetailsPage = () => {
         <>
         <CategoryHeader />
         <ProductDetails />
-        <ReviewsContainer />
+        <ReviewsContainer item={item}/>
         <ProductCardContainer products={productsLikeitems} title="You may also like" />
         </>
     );

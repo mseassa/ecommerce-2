@@ -1,8 +1,11 @@
 import React from 'react'
+import UserFavoriteProducts from './../../components/User/UserFavoriteProducts';
 
 const UserFavoriteProductsPage = () => {
   return (
-    <div>UserFavoriteProductsPage</div>
+    <>
+    <UserFavoriteProducts />
+    </>
   )
 }
 

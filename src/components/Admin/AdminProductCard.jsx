@@ -11,6 +11,7 @@ import {
 import { Button, Col, Modal, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { deleteProduct } from "../../Redux/actions/productsAction";
+import ReactStars from "react-rating-stars-component";
 
 const AdminProductCard = ({ item }) => {
   
@@ -88,15 +89,33 @@ const AdminProductCard = ({ item }) => {
                 <del>$123.00</del>
               </h6>
             </div>
-            <div className="d-flex align-items-center justify-content-center mb-1">
-              <FontAwesomeIcon className="text-primary me-1" icon={faStar} />
-              <FontAwesomeIcon className="text-primary me-1" icon={faStar} />
-              <FontAwesomeIcon className="text-primary me-1" icon={faStar} />
-              <FontAwesomeIcon className="text-primary me-1" icon={faStar} />
-              <FontAwesomeIcon className="text-primary me-1" icon={faStar} />
-
-              <small>(99)</small>
-            </div>
+            <div className="d-flex align-items-center justify-content-center">
+          <div className="me-2">
+            {item.ratingsAverage > 0 ? (
+              <ReactStars
+                edit={false}
+                count={5}
+                size={12}
+                color={"#FFD333"}
+                activeColor={"#FFD333"}
+                value={item.ratingsAverage}
+                a11y={true}
+                isHalf={true}
+                emptyIcon={<i className="far fa-star" />}
+                halfIcon={<i className="fa fa-star-half-alt" />}
+                filledIcon={<i className="fa fa-star" />}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          <div>
+            {
+              item.ratingsQuantity > 0 ? (<small>({item.ratingsQuantity})</small>) : (<small>No Reviews</small>)
+            }
+            
+          </div>
+        </div>
           </div>
         </div>
       </Col>
